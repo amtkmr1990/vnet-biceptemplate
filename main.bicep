@@ -24,3 +24,5 @@ module vnet 'Module/vnet.bicep' = {
     location: location
   }
 }
+
+
