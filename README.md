@@ -1,1 +1,1 @@
-"This bicep template creates vnet with it's properties" 
+This bicep template creates vnet with it's properties
