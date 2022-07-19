@@ -10,7 +10,8 @@ param location string = resourceGroup().location
 var privateDNSZoneNameForWeb = 'privatelink.azurewebsites.net' 
 var privateDNSZoneNameForDB = 'privatelink.database.windows.net'
 
-resource vnet 'Microsoft.Network/virtualNetworks@2020-06-01' = {
+
+resource vnet 'Microsoft.Network/virtualNetworks@2020-06-01' =  {
   name: vnetName
   location: location
   tags: tags
@@ -26,6 +27,16 @@ resource vnet 'Microsoft.Network/virtualNetworks@2020-06-01' = {
       name: subnet.name
       properties: {
         addressPrefix: subnet.addressPrefix
+        delegations: (contains(subnet.delegation,'Microsoft.Web/serverFarms'))?[
+          {
+            name: 'webappdelegation'
+            properties: {
+              serviceName: 'Microsoft.Web/serverFarms'
+            }    
+          }
+        ]:[
+          
+        ]
       }
     }]
   }
@@ -66,7 +77,7 @@ resource privateDnsZoneForDBLink 'Microsoft.Network/privateDnsZones/virtualNetwo
   name: '${privateDnsZonesForDB.name}-link'
   location: 'global'
   properties: {
-    registrationEnabled: true
+    registrationEnabled: false
     virtualNetwork: {
       id: vnet.id
     }

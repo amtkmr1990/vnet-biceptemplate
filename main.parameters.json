@@ -12,11 +12,13 @@
       "value": [
         {
           "name": "default",
-          "addressPrefix": "10.0.0.0/24"
+          "addressPrefix": "10.0.0.0/24",
+          "delegation": ""
         },
         {
-          "name": "privateendoints",
-          "addressPrefix": "10.0.1.0/24"
+          "name": "privateendpoints",
+          "addressPrefix": "10.0.1.0/24",
+          "delegation": "Microsoft.Web/serverfarms"
         }
       ]
     },
