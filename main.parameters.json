@@ -3,10 +3,10 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "rgName": {
-      "value": "rg-amtkmrshared-dev"
+      "value": "rg-acmevnet-dev"
     },
     "vnetName": {
-      "value": "vnet-amtkmrshared-dev"
+      "value": "vnet-acme-dev"
     },
     "subnets": {
       "value": [
@@ -16,9 +16,14 @@
           "delegation": ""
         },
         {
-          "name": "privateendpoints",
+          "name": "subnet-web",
           "addressPrefix": "10.0.1.0/24",
           "delegation": "Microsoft.Web/serverfarms"
+        },
+        {
+          "name": "subnet-db",
+          "addressPrefix": "10.0.2.0/24",
+          "delegation": "Microsoft.Sql/servers"
         }
       ]
     },
