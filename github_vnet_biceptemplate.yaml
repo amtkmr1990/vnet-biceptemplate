@@ -20,7 +20,7 @@ stages:
               azureSubscription: 'sc-amtkmr-dev'
               scriptType: 'bash'
               scriptLocation: 'inlineScript'
-              inlineScript: 'az deployment sub what-if -f main.bicep -l eastus -p parameters.json'
+              inlineScript: 'az deployment sub what-if -f main.bicep -l eastus -p main.parameters.json'
           
   - stage: dev
     displayName: 'Create Infra Dev Env'
@@ -42,6 +42,6 @@ stages:
                   azureSubscription: 'sc-amtkmr-dev'
                   scriptType: 'bash'
                   scriptLocation: 'inlineScript'
-                  inlineScript: 'az deployment sub create -f main.bicep -l eastus -p parameters.json'
+                  inlineScript: 'az deployment sub create -f main.bicep -l eastus -p main.parameters.json'
       
 
