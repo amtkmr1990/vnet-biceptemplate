@@ -24,6 +24,11 @@
           "name": "subnet-db",
           "addressPrefix": "10.0.2.0/24",
           "delegation": "Microsoft.Sql/servers"
+        },
+        {
+          "name": "subnet-vm",
+          "addressPrefix": "10.0.3.0/24",
+          "delegation": ""
         }
       ]
     },
