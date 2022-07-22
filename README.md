@@ -16,4 +16,7 @@ execute below command to create resource. main.bicep is the main module to run a
 <h1> Refer related links </h1>
 
 https://github.com/amtkmr1990/bicep_webapp_template
+
 https://github.com/amtkmr1990/bicep_VM_template
+
+https://github.com/amtkmr1990/bicep_azuresqldb_template
